@@ -2033,7 +2033,7 @@ function drawTitle(){
     X.drawImage(imgPersonajes,VW/2-imgPersonajes.width/2,120,imgPersonajes.width,imgPersonajes.height);
   }
   // Version (clickable)
-  const vTxt='v1.9.117 — 2026.07.15';
+  const vTxt='v1.9.119 — 2026.07.15';
   const vHover=isMobile?(M.down&&inRect(M.x,M.y,VW/2-80,430,160,14)):(M.x>VW/2-80&&M.x<VW/2+80&&M.y>430&&M.y<444);
   dt(vTxt,VW/2,435,9,vHover?'#888':'#444','center');
   if(vHover){X.strokeStyle='#555';X.lineWidth=1;X.strokeRect(VW/2-82,427,164,14)}
@@ -2842,8 +2842,8 @@ function loop(){
   if(PL.sgMode){
     // Cancel on Ctrl/Q again or LB button
     if(JP.ControlLeft||JP.ControlRight||(isController&&gpJust(4))){PL.sgMode=false;PL.sgPhase='input';PL.sgInput='';PL.matchedSG=null;SFX.ms()}
-    // Target phase: click or A button to confirm
-    if(PL.sgPhase==='target'&&(M.click||(isController&&gpJust(0)))){
+    // Target phase: click or RT to confirm
+    if(PL.sgPhase==='target'&&(M.click||(isController&&gpJust(7)))){
       if(isController){PL.sgTarget={x:PL.x+Math.cos(PL.angle)*200,y:PL.y+Math.sin(PL.angle)*200}}
       else{PL.sgTarget={x:M.x+cam.x,y:M.y+cam.y}}
       activateSG(PL.matchedSG);

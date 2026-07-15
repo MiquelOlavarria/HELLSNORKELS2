@@ -64,7 +64,7 @@ Se han mantenido los mismos controles que **HELLDIVERS 2** tanto en teclado como
 | Cambiar arma | 1-4 | Y (tap: 1↔2, hold ≥1s: 3) / D-Pad → (4) |
 | Stratagem (abrir) | Ctrl | LB |
 | Stratagem (flechas) | WASD | D-Pad |
-| Stratagem (confirmar) | Click / Enter | A |
+| Stratagem (confirmar) | Click / RT | RT |
 | Stratagem (cancelar) | Esc / Ctrl | LB / B |
 | Pausa | Esc | Start |
 | Música on/off | M | Back |
