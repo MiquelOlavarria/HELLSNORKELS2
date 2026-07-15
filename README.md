@@ -1,10 +1,23 @@
-# HELLSNORKELS 2
+<p align="center">
+  <img src="logo.png" alt="HELLSNORKELS 2" width="400">
+</p>
 
-> *¡Managed Democracy needs YOU... to snorkel into bug territory!*
+<h3 align="center"><em>¡Managed Democracy needs YOU... to snorkel into bug territory!</em></h3>
 
-Un fan-juego gratuito y sin ánimo de lucro inspirado en **HELLDIVERS 2**, con estética retro estilo NES/SNES. Juega desde el navegador, sin instalar nada.
+<p align="center">
+  Un fan-juego gratuito y sin ánimo de lucro inspirado en <strong>HELLDIVERS 2</strong>, con estética retro estilo NES/SNES.<br>
+  Juega desde el navegador, sin instalar nada.
+</p>
 
-[![Play now](https://img.shields.io/badge/%F0%9F%8E%AE-PLAY%20NOW-brightgreen?style=for-the-badge)](https://web.intra.sqmnet.es)
+<p align="center">
+  <a href="https://web.intra.sqmnet.es"><img src="https://img.shields.io/badge/%F0%9F%8E%AE-PLAY%20NOW-brightgreen?style=for-the-badge" alt="Play now"></a>
+</p>
+
+---
+
+<p align="center">
+  <img src="personajes.png" alt="Personajes" width="600">
+</p>
 
 ---
 
