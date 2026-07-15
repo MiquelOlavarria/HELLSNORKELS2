@@ -195,13 +195,13 @@ function updateMusicInt(){}
 
 // ═══ DATA ═══
 const DIFF=[
-  {nm:'TIRADO',hm:.7,sr:200,me:8,tp:['warrior'],nr:240,nh:80,ds:'Pocos enemigos debiles',sm:1},
-  {nm:'FACIL',hm:.85,sr:160,me:12,tp:['warrior','hunter'],nr:200,nh:90,ds:'Enemigos moderados',sm:1.1},
-  {nm:'NORMAL',hm:1,sr:120,me:18,tp:['warrior','hunter','spewer'],nr:160,nh:100,ds:'Combate equilibrado',sm:1.2},
-  {nm:'DIFICIL',hm:1.05,sr:90,me:22,tp:['warrior','hunter','spewer','charger'],nr:200,nh:120,ds:'Enemigos numerosos',sm:1.35},
-  {nm:'EXTREMO',hm:1.10,sr:70,me:28,tp:['warrior','hunter','spewer','charger'],nr:160,nh:140,ds:'Amenaza seria',sm:1.5},
-  {nm:'SUICIDA',hm:1.15,sr:50,me:32,tp:['warrior','hunter','spewer','charger','titan'],nr:120,nh:160,ds:'Solo para valientes',sm:1.65},
-  {nm:'HELLDIVER',hm:1.20,sr:35,me:40,tp:['warrior','hunter','spewer','charger','titan'],nr:80,nh:200,ds:'POR LA LIBERTAD!',sm:1.8}
+  {nm:'TIRADO',hm:.7,sr:200,me:8,tp:['cangrejo'],nr:240,nh:80,ds:'Pocos enemigos debiles',sm:1},
+  {nm:'FACIL',hm:.85,sr:160,me:12,tp:['cangrejo','gamba'],nr:200,nh:90,ds:'Enemigos moderados',sm:1.1},
+  {nm:'NORMAL',hm:1,sr:120,me:18,tp:['cangrejo','gamba','almeja'],nr:160,nh:100,ds:'Combate equilibrado',sm:1.2},
+  {nm:'DIFICIL',hm:1.05,sr:90,me:22,tp:['cangrejo','gamba','almeja','centollo'],nr:200,nh:120,ds:'Enemigos numerosos',sm:1.35},
+  {nm:'EXTREMO',hm:1.10,sr:70,me:28,tp:['cangrejo','gamba','almeja','centollo'],nr:160,nh:140,ds:'Amenaza seria',sm:1.5},
+  {nm:'SUICIDA',hm:1.15,sr:50,me:32,tp:['cangrejo','gamba','almeja','centollo','erizo'],nr:120,nh:160,ds:'Solo para valientes',sm:1.65},
+  {nm:'HELLDIVER',hm:1.20,sr:35,me:40,tp:['cangrejo','gamba','almeja','centollo','erizo'],nr:80,nh:200,ds:'POR LA LIBERTAD!',sm:1.8}
 ];
 const BIOM=[
   {nm:'LUNAR',ds:'Superficie gris y crateres',b:'#2a2a30',b2:'#222228',b3:'#333338',rc:['#3a3a42','#333340','#404048'],deco:'none',pc:'#1e1e26',pc2:'#aaa'},
@@ -210,11 +210,11 @@ const BIOM=[
   {nm:'VOLCANICO',ds:'Volcanes y lagos de lava',b:'#1a0a0a',b2:'#2a1010',b3:'#3a1818',rc:['#4a2020','#3a1515','#553030'],deco:'volcano',pc:'#1a0505',pc2:'#f80'},
 ];
 const EDEF={
-  warrior:{hp:30,sp:.8,dm:8,sc:10,sz:12,c1:'#446600',c2:'#335500',ar:14,at:40,ag:90},
-  hunter:{hp:20,sp:1.5,dm:12,sc:15,sz:10,c1:'#557700',c2:'#446600',ar:16,at:50,ag:100},
-  spewer:{hp:60,sp:.5,dm:15,sc:25,sz:18,c1:'#664400',c2:'#553300',ar:140,at:100,ag:110,ranged:1},
-  charger:{hp:150,sp:1.2,dm:30,sc:100,sz:26,c1:'#553322',c2:'#442211',ar:20,at:70,ag:120},
-  titan:{hp:400,sp:.4,dm:50,sc:300,sz:40,c1:'#334422',c2:'#223311',ar:25,at:100,ag:130},
+  cangrejo:{hp:30,sp:.8,dm:8,sc:10,sz:12,c1:'#cc4400',c2:'#aa3300',ar:14,at:40,ag:90},
+  gamba:{hp:20,sp:1.5,dm:12,sc:15,sz:10,c1:'#ff6644',c2:'#dd5533',ar:16,at:50,ag:100},
+  almeja:{hp:60,sp:.5,dm:15,sc:25,sz:18,c1:'#887799',c2:'#665577',ar:140,at:100,ag:110,ranged:1},
+  centollo:{hp:150,sp:1.2,dm:30,sc:100,sz:26,c1:'#883322',c2:'#662211',ar:20,at:70,ag:120},
+  erizo:{hp:400,sp:.4,dm:50,sc:300,sz:40,c1:'#332244',c2:'#221133',ar:25,at:100,ag:130},
 };
 const SDEF={
   dog:{nm:'Perro Guardian',sq:['down','up','left','up','right','right'],cl:'#00ffff',cd:0,mc:600,target:1,pod:1},
@@ -956,7 +956,7 @@ function spawnE(tp,x,y,fresh){
     hp:t.hp*d.hm,mhp:t.hp*d.hm,sp:t.sp*d.sm,dm:t.dm,sv:t.sc,sz:t.sz,c1:t.c1,c2:t.c2,ar:t.ar,at:t.at,ag:t.ag,
     tp,alive:1,hs:0,angle:0,pcx:x||0,pcy:y||0,pa:Math.random()*6.28,pt:60+Math.random()*120,
     st:'patrol',atm:t.at,ranged:t.ranged||0,charging:0,ctm:0,
-    canCall:fresh&&tp!=='titan'&&tp!=='charger',hasCalled:0,calling:0,callT:0});
+    canCall:fresh&&tp!=='erizo'&&tp!=='centollo',hasCalled:0,calling:0,callT:0});
   const e=EN[EN.length-1];const r=e.sz/2;
   if(!canGo(e.x,e.y,r)||inAnyHazard(e.x,e.y,r)){
     let placed=false;
@@ -975,7 +975,7 @@ function updateEN(){
   if(spTmr>=d.sr&&EN.length<maxE){spTmr=0;const sd=Math.random()*4|0;let sx,sy;
     if(sd===0){sx=cam.x-60;sy=cam.y+Math.random()*VH}else if(sd===1){sx=cam.x+VW+60;sy=cam.y+Math.random()*VH}else if(sd===2){sx=cam.x+Math.random()*VW;sy=cam.y-60}else{sx=cam.x+Math.random()*VW;sy=cam.y+VH+60}
     const tp=d.tp[Math.random()*d.tp.length|0];spawnG(tp,sx,sy)}
-  for(const n of NS){if(n.destroyed)continue;if(n.stm<=0&&EN.length<d.me){n.stm=n.sr;const tp=Math.random()>.7?'hunter':'warrior';spawnE(tp,n.x+(Math.random()-.5)*40,n.y+(Math.random()-.5)*40,1);
+  for(const n of NS){if(n.destroyed)continue;if(n.stm<=0&&EN.length<d.me){n.stm=n.sr;const tp=Math.random()>.7?'gamba':'cangrejo';spawnE(tp,n.x+(Math.random()-.5)*40,n.y+(Math.random()-.5)*40,1);
     // Expel newly spawned enemy from obstacles/hazards
     if(EN.length>0){const ne=EN[EN.length-1];expelEntity(ne);expelFromHazards(ne)}
     // Visual emerge effect
@@ -998,7 +998,7 @@ function updateEN(){
       if(e.callT>=300){
         e.calling=0;e.hasCalled=1;
         // Spawn reinforcement group near the caller
-        const rTypes=['warrior','warrior','hunter','hunter','spewer'];
+        const rTypes=['cangrejo','cangrejo','gamba','gamba','almeja'];
         const rCount=3+(Math.random()*3|0);
         for(let r=0;r<rCount;r++){
           const rx=e.x+(Math.random()-.5)*120,ry=e.y+(Math.random()-.5)*120;
@@ -1020,7 +1020,7 @@ function updateEN(){
         // Chain alert nearby patrol enemies
         for(const o of EN)if(o!==e&&o.alive&&o.st==='patrol'&&Math.hypot(o.x-e.x,o.y-e.y)<130)o.st='alert';
         // Small enemies may start calling reinforcements
-        if(e.canCall&&!e.hasCalled&&(e.tp==='warrior'||e.tp==='hunter')&&dp2<e.ag){
+        if(e.canCall&&!e.hasCalled&&(e.tp==='cangrejo'||e.tp==='gamba')&&dp2<e.ag){
           if(Math.random()<.35){e.calling=1;e.callT=0;e.st='chase'}
         }
       }
@@ -1028,7 +1028,7 @@ function updateEN(){
     }
     if(e.st==='alert'){if(dp2<e.ag*.7)e.st='chase';else if(dp2>e.ag*2)e.st='patrol';else moveEnt(e,Math.cos(e.angle)*e.sp*.6,Math.sin(e.angle)*e.sp*.6)}
     if(e.st==='chase'){if(dp2>e.ag*2.5)e.st='patrol';else moveEnt(e,Math.cos(e.angle)*e.sp,Math.sin(e.angle)*e.sp)}
-    if(e.tp==='charger'&&e.st==='chase'){
+    if(e.tp==='centollo'&&e.st==='chase'){
       if(!e.charging&&dp2<180){e.ctm++;if(e.ctm>50){e.charging=1;e.ctm=0}}
       if(e.charging){moveEnt(e,Math.cos(e.angle)*5,Math.sin(e.angle)*5);e.ctm++;if(e.ctm>35){e.charging=0;e.ctm=0}      if(dp2<22&&PL.inv<=0){PL.hp-=e.dm;PL.inv=30;shake=12;SFX.hit();say('hit');if(isController)gpVibrate(200,0.5)}continue}
     }
@@ -1065,56 +1065,54 @@ function updateEN(){
 function drawEN(){
   for(const e of EN){const sx=e.x-cam.x,sy=e.y-cam.y;if(sx<-50||sx>VW+50||sy<-50||sy>VH+50)continue;
   X.save();X.translate(sx,sy);
-    if(e.tp==='titan'){
+    if(e.tp==='erizo'){
       const s=e.sz;const la=Math.sin(fc*.06)*2;
-      // Legs (6)
-      for(let i=0;i<6;i++){const lo=(fc*.08+i*1.2)%6.28;const lx=-s/2+4+i*(s/5.5);
-        dp(lx,s/2-2,5,10+Math.sin(lo)*3,'#3a4422');dp(lx+1,s/2,3,8+Math.sin(lo)*2,'#4a5a2a');
-        dp(lx+2,s/2+7+Math.sin(lo)*3,3,3,'#2a3010'); // foot
-      }
-      // Shadow under body
-      dp(-s/2+2,s/2-4,s-4,6,'#1a2010');
-      // Body — layered
-      dp(-s/2,-s/2,s,s,e.c1);
-      dp(-s/2+4,-s/2+4,s-8,s-8,e.c2);
-      dp(-s/2+6,-s/2+6,s-12,s-12,'#3a4a22');
-      // Armor plates
-      dp(-s/2+2,-s/2+2,s/2-2,s/3,'#4a5a30');
-      dp(s/4,-s/2+2,s/2-2,s/3,'#4a5a30');
-      // Head/mandibles
-      dp(-s/2-8,-8,16,8,'#4a5a2a');dp(-s/2-6,-7,12,6,'#5a6a3a');
-      dp(-s/2-12,-6,8,3,'#6a7a4a');dp(-s/2-12,2,8,3,'#6a7a4a'); // mandibles
-      // Eyes — large red glowing
-      dp(-s/2+6,-s/2+4,8,6,'#550000');dp(-s/2+7,-s/2+5,6,4,'#ff0000');
-      dp(s/2-14,-s/2+4,8,6,'#550000');dp(s/2-13,-s/2+5,6,4,'#ff0000');
-      // Eye glow
-      X.globalAlpha=.3+Math.sin(fc*.1)*.15;
-      dp(-s/2+5,-s/2+3,10,8,'#ff000044');dp(s/2-15,-s/2+3,10,8,'#ff000044');
-      X.globalAlpha=1;
-      // Spine ridges
-      for(let i=0;i<4;i++){dp(-s/2+6+i*8,-s/2-2-la,5,4,'#5a6a3a');dp(-s/2+7+i*8,-s/2-1-la,3,2,'#6a7a4a')}
-      // Outline
-      X.strokeStyle='rgba(0,0,0,0.1)';X.lineWidth=1.5;X.strokeRect(-s/2-1,-s/2-1,s+2,s+2);
-    }else if(e.tp==='charger'){
-      const s=e.sz;
-      // Legs with animation
-      for(let i=0;i<3;i++){const la=Math.sin(fc*.1+i)*2;
-        dp(-s/2+i*(s/2.5),s/2-2,5,8+la,'#6a5a2a');dp(-s/2+i*(s/2.5)+1,s/2+4+la,4,3,'#4a3a1a');
+      // Spines (radial)
+      for(let i=0;i<12;i++){const a=(i/12)*6.28+fc*.02;const sl=s*.6+Math.sin(fc*.1+i)*3;
+        dp(Math.cos(a)*s/2-1,Math.sin(a)*s/2-1,3,sl,'#221133');
+        dp(Math.cos(a)*s/2,Math.sin(a)*s/2,2,sl-2,'#442255');
       }
       // Shadow
-      dp(-s/2,s/2-4,s,5,'#3a2a10');
-      // Body — armored
-      dp(-s/2,-s/2,s,s,e.c1);
-      dp(-s/2+3,-s/2+3,s-6,s*.6,e.c2);
-      // Armor plates
-      dp(-s/2+2,-s/2+2,s-4,s/3,'#7a6a3a');
-      dp(-s/2+4,-s/2+4,s-8,s/4,'#8a7a4a');
-      // Horn
-      dp(-4,-s/2-10,8,12,'#886633');dp(-3,-s/2-8,6,8,'#aa8844');
-      dp(-2,-s/2-12,4,6,'#ccaa55');
-      // Eyes
-      dp(-s/2+4,-4,5,4,'#662200');dp(-s/2+5,-3,3,2,'#ff4400');
-      dp(s/2-9,-4,5,4,'#662200');dp(s/2-8,-3,3,2,'#ff4400');
+      dp(-s/2+2,s/2-2,s-4,5,'#1a1020');
+      // Body — round, spiky
+      dp(-s/2+4,-s/2+4,s-8,s-8,'#442255');
+      dp(-s/2+2,-s/2+2,s-4,s-4,e.c1);
+      dp(-s/2,-s/2,s,s,e.c2);
+      dp(-s/2+4,-s/2+4,s-8,s-8,e.c1);
+      dp(-s/2+6,-s/2+6,s-12,s-12,'#442255');
+      // Eyes — glowing purple
+      dp(-s/2+8,-s/2+6,6,5,'#220033');dp(-s/2+9,-s/2+7,4,3,'#9933ff');
+      dp(s/2-14,-s/2+6,6,5,'#220033');dp(s/2-13,-s/2+7,4,3,'#9933ff');
+      // Eye glow
+      X.globalAlpha=.3+Math.sin(fc*.1)*.15;
+      dp(-s/2+7,-s/2+5,8,7,'#9933ff44');dp(s/2-15,-s/2+5,8,7,'#9933ff44');
+      X.globalAlpha=1;
+      // Outline
+      X.strokeStyle='rgba(0,0,0,0.1)';X.lineWidth=1.5;X.strokeRect(-s/2-1,-s/2-1,s+2,s+2);
+    }else if(e.tp==='centollo'){
+      const s=e.sz;
+      // Long spider legs (8 legs, 4 per side)
+      for(let i=0;i<4;i++){const la=Math.sin(fc*.08+i*.8)*3;
+        const lx=-s/2-6-i*4,rx=s/2+2+i*4;
+        dp(lx,s/2-4+i*3,4,10+la,'#662211');dp(lx+1,s/2+2+i*3+la,3,3,'#441100');
+        dp(rx,s/2-4+i*3,4,10-la,'#662211');dp(rx+1,s/2+2+i*3-la,3,3,'#441100');
+      }
+      // Shadow
+      dp(-s/2-8,s/2-2,s+16,4,'#2a1008');
+      // Body — armored, wide
+      dp(-s/2,-s/3,s,s*.66,e.c2);
+      dp(-s/2+2,-s/3+2,s-4,s*.66-4,e.c1);
+      dp(-s/2+4,-s/3+4,s-8,s*.66-6,'#7a3322');
+      // Shell texture
+      dp(-s/2+6,-s/3+6,s-12,s*.33,'#6a2211');
+      dp(-s/2+8,-s/3+8,s-16,s*.2,'#5a1100');
+      // Claws (2 large)
+      dp(-s/2-8,-4,10,6,'#883322');dp(-s/2-6,-3,6,4,'#aa4433');
+      dp(s/2-2,-4,10,6,'#883322');dp(s/2,-3,6,4,'#aa4433');
+      // Eyes on stalks
+      dp(-4,-s/2-4,3,6,'#662211');dp(-3,-s/2-6,4,4,'#883322');
+      dp(2,-s/2-4,3,6,'#662211');dp(3,-s/2-6,4,4,'#883322');
+      dp(-2,-s/2-5,2,2,'#ff4400');dp(4,-s/2-5,2,2,'#ff4400');
       // Charge glow
       if(e.charging){X.globalAlpha=.4+Math.sin(fc*.3)*.2;
         dp(-s/2-4,-s/2-4,s+8,s+8,'#ff440044');
@@ -1122,77 +1120,80 @@ function drawEN(){
         X.globalAlpha=1;
       }
       // Outline
-      X.strokeStyle='rgba(0,0,0,0.1)';X.lineWidth=1.5;X.strokeRect(-s/2-1,-s/2-12,s+2,s+14);
-    }else if(e.tp==='spewer'){
-      const s=e.sz;const la=Math.sin(fc*.08);
-      // Legs
-      dp(-s/2-3,2,5,6+la,e.c2);dp(s/2-2,2,5,6-la,e.c2);
-      dp(-s/2-1,4,4,5+la,'#4a3a0a');dp(s/2-3,4,4,5-la,'#4a3a0a');
-      // Shadow
-      dp(-s/2,s/2-3,s,4,'#3a3a0a');
-      // Body — bloated organic
-      dp(-s/2,-s/3,s,s*.66,e.c1);
-      dp(-s/2+2,-s/3+2,s-4,s*.66-4,e.c2);
-      dp(-s/2+4,-s/3+4,s-8,s*.66-6,'#886622');
-      // Belly detail
-      dp(-s/2-2,-s/4,s+4,s*.5,'#775500');
-      dp(-s/2+1,-s/4+3,s-2,s*.3,'#886611');
-      // Head
-      dp(-s/3,-s/2,s*.66,s/3,e.c1);
-      dp(-s/3+2,-s/2+2,s*.66-4,s/3-2,e.c2);
-      // Eyes
-      dp(-s/3+1,-s/2+2,4,4,'#884400');dp(-s/3+2,-s/2+3,2,2,'#ffaa00');
-      dp(s/3-5,-s/2+2,4,4,'#884400');dp(s/3-4,-s/2+3,2,2,'#ffaa00');
+      X.strokeStyle='rgba(0,0,0,0.1)';X.lineWidth=1.5;X.strokeRect(-s/2-10,-s/2-8,s+20,s+16);
+    }else if(e.tp==='almeja'){
+      const s=e.sz;const la=Math.sin(fc*.08);const open=la*.3;
+      // Bottom shell
+      dp(-s/2,s/6,s,s*.5,e.c2);
+      dp(-s/2+2,s/6+2,s-4,s*.5-4,e.c1);
+      // Top shell (opens when attacking)
+      dp(-s/2,-s/3-open*s,s,s*.5,e.c1);
+      dp(-s/2+2,-s/3+2-open*s,s-4,s*.5-4,e.c2);
+      dp(-s/2+4,-s/3+4-open*s,s-8,s*.5-6,'#776688');
+      // Shell ridges
+      for(let i=0;i<3;i++){dp(-s/2+4+i*(s/4),-s/3+2-open*s,2,s*.4-4,'#665577')}
+      // Inner flesh (visible when open)
+      if(la>0){dp(-s/4,-s/6-open*s/2,s/2,s*.3,'#9988aa');dp(-s/4+2,-s/6+2-open*s/2,s/2-4,s*.3-2,'#aa99bb')}
+      // Eye stalks
+      dp(-s/4,-s/3-2,3,5,e.c1);dp(-s/4+1,-s/3-4,3,3,e.c2);
+      dp(s/4-3,-s/3-2,3,5,e.c1);dp(s/4-2,-s/3-4,3,3,e.c2);
+      dp(-s/4+1,-s/3-3,2,2,'#332244');dp(s/4-1,-s/3-3,2,2,'#332244');
       // Spitting animation
-      if(fc%30<15){dp(-2,-s/3-3,5,5,'#66ff00');dp(-1,-s/3-5,3,3,'#88ff22');
-        X.globalAlpha=.4;dp(-3,-s/3-6,7,4,'#44ff0066');X.globalAlpha=1}
+      if(fc%30<15){dp(-2,-s/3-3-open*s,5,5,'#887799');dp(-1,-s/3-5-open*s,3,3,'#9988aa');
+        X.globalAlpha=.4;dp(-3,-s/3-6-open*s,7,4,'#88779966');X.globalAlpha=1}
       // Outline
-      X.strokeStyle='rgba(0,0,0,0.1)';X.lineWidth=1;X.strokeRect(-s/2-1,-s/2-1,s+2,s*.66+2);
-    }else if(e.tp==='hunter'){
+      X.strokeStyle='rgba(0,0,0,0.1)';X.lineWidth=1;X.strokeRect(-s/2-1,-s/2-1-open*s,s+2,s+2);
+    }else if(e.tp==='gamba'){
       const s=e.sz;const la=Math.sin(fc*.18);
-      // 4 legs — long, fast
-      dp(-s/2-2,2,3,8+la,e.c2);dp(s/2-1,2,3,8-la,e.c2);
-      dp(-s/2-1,-2,2,6+la,e.c2);dp(s/2-1,-2,2,6-la,e.c2);
-      dp(-s/2+2,3,3,7-la,e.c2);dp(s/2-5,3,3,7+la,e.c2);
+      // Antennae
+      dp(-s/4,-s/2-6,2,8,'#dd5533');dp(-s/4-1,-s/2-8,3,4,'#ff6644');
+      dp(s/4-2,-s/2-6,2,8,'#dd5533');dp(s/4-1,-s/2-8,3,4,'#ff6644');
+      // Many small legs (6)
+      for(let i=0;i<3;i++){const lo=(fc*.15+i*2)%6.28;
+        dp(-s/2+i*3,s/2-2,2,5+Math.sin(lo)*2,e.c2);
+        dp(s/2-2-i*3,s/2-2,2,5-Math.sin(lo)*2,e.c2);
+      }
+      // Tail (curved segments)
+      dp(-2,s/2,4,6,'#dd5533');dp(-1,s/2+4,3,5,'#cc4422');
+      dp(0,s/2+7,2,4,'#bb3311');
       // Shadow
-      dp(-s/2,s/2-2,s,3,'#2a2a0a');
-      // Body — sleek, fast
-      dp(-s/2,-s/3,s,s*.66,e.c1);
-      dp(-s/2+2,-s/3+2,s-4,s*.66-4,e.c2);
-      dp(-s/2+3,-s/3+3,s-6,s*.66-6,'#5a5a1a');
+      dp(-s/2,s/2-2,s,3,'#2a1510');
+      // Body — segmented, sleek
+      dp(-s/2,-s/4,s,s*.5,e.c2);
+      dp(-s/2+1,-s/4+1,s-2,s*.5-2,e.c1);
+      // Segments
+      for(let i=0;i<3;i++){dp(-s/2+2+i*(s/4),-s/4+2,2,s*.5-4,'#ee5533')}
       // Head
       dp(-s/3,-s/2,s*.66,s/3,e.c1);
       dp(-s/3+2,-s/2+2,s*.66-4,s/3-2,e.c2);
-      // Eyes — large, yellow, menacing
-      dp(-s/3+1,-s/2+2,3,3,'#886600');dp(-s/3+2,-s/2+3,2,2,'#ffff00');
-      dp(s/3-4,-s/2+2,3,3,'#886600');dp(s/3-3,-s/2+3,2,2,'#ffff00');
-      // Mandibles
-      dp(-s/3-1,-s/2+4,3,2,'#776600');dp(s/3-2,-s/2+4,3,2,'#776600');
+      // Eyes — large, black
+      dp(-s/3+1,-s/2+2,3,3,'#220011');dp(-s/3+2,-s/2+3,2,2,'#ff3366');
+      dp(s/3-4,-s/2+2,3,3,'#220011');dp(s/3-3,-s/2+3,2,2,'#ff3366');
       // Outline
-      X.strokeStyle='rgba(0,0,0,0.1)';X.lineWidth=1;X.strokeRect(-s/2-1,-s/2-1,s+2,s*.66+2);
+      X.strokeStyle='rgba(0,0,0,0.1)';X.lineWidth=1;X.strokeRect(-s/2-1,-s/2-10,s+2,s+18);
     }else{
-      // Warrior — default
+      // Cangrejo — default
       const s=e.sz;const la=Math.sin(fc*.12);
-      // Legs
-      dp(-s/2-3,0,4,6+la,e.c2);dp(s/2-1,0,4,6-la,e.c2);
-      dp(-s/2-2,-s/4,3,5+la,e.c2);dp(s/2-1,-s/4,3,5-la,e.c2);
+      // Legs (4 small)
+      dp(-s/2-2,s/2-4,3,6+la,e.c2);dp(s/2-1,s/2-4,3,6-la,e.c2);
+      dp(-s/2,s/2-2,3,5-la,e.c2);dp(s/2-3,s/2-2,3,5+la,e.c2);
       // Shadow
-      dp(-s/2,s/2-2,s,3,'#2a2a0a');
-      // Body
-      dp(-s/2,-s/3,s,s*.66,e.c1);
-      dp(-s/2+2,-s/3+2,s-4,s*.66-4,e.c2);
-      dp(-s/2+3,-s/3+3,s-6,s*.66-6,'#7a6a2a');
-      // Head
-      dp(-s/3,-s/2,s*.66,s/3,e.c1);
-      dp(-s/3+2,-s/2+2,s*.66-4,s/3-2,e.c2);
-      // Eyes
-      dp(-s/3+1,-s/2+2,3,3,'#666600');dp(-s/3+2,-s/2+3,2,2,'#ffff00');
-      dp(s/3-4,-s/2+2,3,3,'#666600');dp(s/3-3,-s/2+3,2,2,'#ffff00');
-      // Mandibles/arms
-      dp(-s/3-2,-s/6,4,3,'#667700');dp(s/3-2,-s/6,4,3,'#667700');
-      dp(-s/3-3,-s/8,3,2,'#778811');dp(s/3-1,-s/8,3,2,'#778811');
+      dp(-s/2,s/2-2,s,3,'#2a1508');
+      // Body — round crab shape
+      dp(-s/2,-s/3,s,s*.6,e.c2);
+      dp(-s/2+2,-s/3+2,s-4,s*.6-2,e.c1);
+      dp(-s/2+4,-s/3+4,s-8,s*.6-4,'#bb3300');
+      // Shell texture
+      dp(-s/2+6,-s/3+6,s-12,s*.3,'#aa2200');
+      // Claws (2)
+      dp(-s/2-6,-2,8,5,'#cc4400');dp(-s/2-4,-1,4,3,'#ee5522');
+      dp(s/2-2,-2,8,5,'#cc4400');dp(s/2,-1,4,3,'#ee5522');
+      // Eyes on stalks
+      dp(-3,-s/2-2,2,4,e.c1);dp(-2,-s/2-4,3,3,e.c2);
+      dp(1,-s/2-2,2,4,e.c1);dp(2,-s/2-4,3,3,e.c2);
+      dp(-1,-s/2-3,2,2,'#220000');dp(3,-s/2-3,2,2,'#220000');
       // Outline
-      X.strokeStyle='rgba(0,0,0,0.1)';X.lineWidth=1;X.strokeRect(-s/2-1,-s/2-1,s+2,s*.66+2);
+      X.strokeStyle='rgba(0,0,0,0.1)';X.lineWidth=1;X.strokeRect(-s/2-1,-s/2-5,s+2,s+9);
     }
     // State indicator
     if(e.calling){
@@ -1206,7 +1207,7 @@ function drawEN(){
     else if(e.st==='alert'){X.globalAlpha=.5+Math.sin(fc*.2)*.3;dp(-2,-e.sz/2-10,4,5,'#ffff00');X.globalAlpha=1}
     else if(e.st==='chase'){dp(-3,-e.sz/2-12,6,5,'#ff0000')}
     // HP bar
-    if(e.hp<e.mhp&&(e.tp==='charger'||e.tp==='titan')){dp(-e.sz/2,-e.sz/2-14,e.sz,3,'#222');dp(-e.sz/2,-e.sz/2-14,e.sz*(e.hp/e.mhp),3,'#ff0000');dp(-e.sz/2,-e.sz/2-14,e.sz*(e.hp/e.mhp),1,'#ff6666')}
+    if(e.hp<e.mhp&&(e.tp==='centollo'||e.tp==='erizo')){dp(-e.sz/2,-e.sz/2-14,e.sz,3,'#222');dp(-e.sz/2,-e.sz/2-14,e.sz*(e.hp/e.mhp),3,'#ff0000');dp(-e.sz/2,-e.sz/2-14,e.sz*(e.hp/e.mhp),1,'#ff6666')}
     X.restore();
   }
 }
@@ -2033,7 +2034,7 @@ function drawTitle(){
     X.drawImage(imgPersonajes,VW/2-imgPersonajes.width/2,120,imgPersonajes.width,imgPersonajes.height);
   }
   // Version (clickable)
-  const vTxt='v1.9.123 — 2026.07.15';
+  const vTxt='v1.9.143 — 2026.07.15';
   const vHover=isMobile?(M.down&&inRect(M.x,M.y,VW/2-80,430,160,14)):(M.x>VW/2-80&&M.x<VW/2+80&&M.y>430&&M.y<444);
   dt(vTxt,VW/2,435,9,vHover?'#888':'#444','center');
   if(vHover){X.strokeStyle='#555';X.lineWidth=1;X.strokeRect(VW/2-82,427,164,14)}
@@ -2068,7 +2069,7 @@ const CLG=[
     'Jugador con movimiento, stamina y colisiones con obstaculos',
     '4 armas: Ametralladora, Pistola, Comando, Granadas',
     '7 niveles de dificultad y 3 planetas (Lunar, Desértico, Boscoso)',
-    '5 tipos de Terminids: Warrior, Hunter, Spewer, Charger, Titan',
+    '5 tipos de enemigos marinos: Cangrejo, Gamba, Almeja, Centollo, Erizo',
     'Sistema de estratagemas con secuencias WASD',
     'Estratagemas ofensivos (Laser Orbital, Águila Cluster) y de equipo',
     'Perro Guardian y Mochila Salto',
@@ -2103,7 +2104,7 @@ const CLG=[
   {v:'v1.3.0 — 2026.07.12 16:27',c:[
     'Comando: cohetes explotan al primer impacto (enemigo u obstaculo)',
     'Comando: daño directo 67, splash 25 con decaimiento por distancia',
-    'Comando: 6 disparos matan al Titan (400 HP), balanceado por tipo',
+    'Comando: 6 disparos matan al Erizo (400 HP), balanceado por tipo',
     'Comando: los cohetes ya no atraviesan enemigos',
     'Eliminado área persistente de fuego de los cohetes',
     'Enemigos muertos ya no dropean items',
@@ -2113,7 +2114,7 @@ const CLG=[
     'Si no se mata al emisario, aparecen 3-5 refuerzos cerca',
     'Solo enemigos nacidos de nidos pueden llamar (no la oleada inicial)',
     'Cada enemigo solo puede llamar una vez',
-    'Titanes y Chargers no pueden llamar refuerzos'
+    'Erizos y Centollos no pueden llamar refuerzos'
   ]},
   {v:'v1.4.0 — 2026.07.12 17:03',c:[
     'Velocidad de enemigos escala con dificultad (x1.0 Tirado → x1.8 Helldiver)',
@@ -2127,8 +2128,8 @@ const CLG=[
     'Reduce escala de vida de enemigos por dificultad',
     'Antes: hm iba de 0.5 (Tirado) a 2.2 (Helldiver)',
     'Ahora: hm va de 0.7 (Tirado) a 1.20 (Helldiver), ~5% por nivel',
-    'Titan en Helldiver: 480 HP (antes 880), 8 cohetes Comando para matar',
-    'Charger en Helldiver: 180 HP, 3 cohetes para matar',
+    'Erizo en Helldiver: 480 HP (antes 880), 8 cohetes Comando para matar',
+    'Centollo en Helldiver: 180 HP, 3 cohetes para matar',
     'La dificultad ahora depende mas de velocidad y cantidad que de vida'
   ]},
   {v:'v1.5.0 — 2026.07.12 18:44',c:[

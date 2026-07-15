@@ -42,7 +42,7 @@
 
 1. Abre el enlace en tu navegador
 2. Selecciona dificultad y planeta
-3. Destruye todos los nidos de Terminids
+3. Destruye todos los nidos de criaturas marinas
 4. ¡Extracción en el centro del mapa!
 
 ### Controles
