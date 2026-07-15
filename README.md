@@ -47,18 +47,27 @@
 
 ### Controles
 
+Se han mantenido los mismos controles que **HELLDIVERS 2** tanto en teclado como en mando Xbox.
+
 | Acción | Teclado | Mando |
 |--------|---------|-------|
 | Mover | WASD | Left Stick |
 | Apuntar | Ratón | Right Stick |
-| Disparar | Click | RT |
-| Granada | G | LT |
+| Disparar | Click izquierdo | RT |
+| Granada | G | RT (con granada equipada) |
 | Melee | F | RB |
-| Interactuar | E | A |
 | Recargar | R | X |
-| Cambiar arma | 1-2 | Y (tap) |
-| Stratagem | Tab | LB |
+| Interactuar | E | A |
 | Sprint | Shift | L3 |
+| Usar stim | V | D-Pad ↑ |
+| Saltar (Jump Pack) | Espacio | A |
+| Cambiar arma | 1-4 | Y (tap: 1↔2, hold ≥1s: 3) / D-Pad → (4) |
+| Stratagem (abrir) | Tab / Ctrl | LB |
+| Stratagem (flechas) | WASD | D-Pad |
+| Stratagem (confirmar) | Click / Enter | A |
+| Stratagem (cancelar) | Esc / Ctrl | LB / B |
+| Pausa | Esc | Start |
+| Música on/off | M | Back |
 
 ---
 
