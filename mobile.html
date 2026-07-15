@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no,viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<title>HELLSNORKELS 2 — Móvil</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#000;overflow:hidden;overscroll-behavior:auto}
+canvas{display:block;image-rendering:pixelated;image-rendering:crisp-edges;position:absolute;top:0;left:0;touch-action:manipulation;-webkit-touch-callout:none;-webkit-user-select:none;user-select:none}
+#fsBtn{position:fixed;top:8px;right:8px;z-index:100;background:#222;color:#fff;border:1px solid #555;padding:6px 12px;font:bold 12px monospace;cursor:pointer;border-radius:4px;display:none}
+.desktop-link{position:fixed;bottom:8px;left:8px;z-index:100;background:#222;color:#666;border:1px solid #444;padding:4px 10px;font:10px monospace;cursor:pointer;border-radius:4px;text-decoration:none;color:#666}
+</style>
+</head>
+<body>
+<canvas id="gc"></canvas>
+<button id="fsBtn" onclick="toggleFullscreen()">⛶</button>
+<a class="desktop-link" href="desktop.html">🖥️ PC</a>
+<script>window.isMobile=true;</script>
+<script src="game.js?v=1.9.96"></script>
+<script src="input-mobile.js?v=1.9.96"></script>
+</body>
+</html>

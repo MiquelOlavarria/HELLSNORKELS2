@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<title>HELLSNORKELS 2</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#000;overflow:hidden;overscroll-behavior:auto}
+canvas{display:block;image-rendering:pixelated;image-rendering:crisp-edges;position:absolute;top:0;left:0}
+#fsBtn{position:fixed;top:8px;right:8px;z-index:100;background:#222;color:#ffcc00;border:1px solid #555;padding:6px 12px;font:bold 12px monospace;cursor:pointer;border-radius:4px;display:none}
+.mobile-link{position:fixed;bottom:8px;left:8px;z-index:100;background:#222;color:#666;border:1px solid #444;padding:4px 10px;font:10px monospace;cursor:pointer;border-radius:4px;text-decoration:none}
+.mobile-link:hover{color:#ffcc00}
+</style>
+</head>
+<body>
+<canvas id="gc"></canvas>
+<button id="fsBtn" onclick="toggleFullscreen()">⛶</button>
+<a class="mobile-link" href="mobile.html">📱 Versión Móvil</a>
+<script>window.isMobile=false;</script>
+<script src="game.js?v=1.9.96"></script>
+<script src="input-desktop.js?v=1.9.96"></script>
+<div style="font-size: 11px; color: #555; margin-top: 40px; text-align: center; line-height: 1.4;">
+  HELLSNORKELS 2 es un fan-game gratuito, no oficial y sin ánimo de lucro, creado puramente como parodia y homenaje. Este proyecto no está afiliado, asociado ni respaldado por Arrowhead Game Studios ni Sony Interactive Entertainment. "Helldivers" y todos los logotipos y elementos relacionados son marcas registradas de sus respectivos dueños.
+</div>
+</body>
+</html>
