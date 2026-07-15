@@ -67,7 +67,7 @@ Se han mantenido los mismos controles que **HELLDIVERS 2** tanto en teclado como
 | Stratagem (confirmar) | Click / RT | RT |
 | Stratagem (cancelar) | Esc / Ctrl | LB / B |
 | Pausa | Esc | Start |
-| Música on/off | M | Back |
+| Música on/off | M | Select |
 
 ---
 

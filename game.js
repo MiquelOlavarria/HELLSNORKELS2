@@ -2033,7 +2033,7 @@ function drawTitle(){
     X.drawImage(imgPersonajes,VW/2-imgPersonajes.width/2,120,imgPersonajes.width,imgPersonajes.height);
   }
   // Version (clickable)
-  const vTxt='v1.9.119 — 2026.07.15';
+  const vTxt='v1.9.121 — 2026.07.15';
   const vHover=isMobile?(M.down&&inRect(M.x,M.y,VW/2-80,430,160,14)):(M.x>VW/2-80&&M.x<VW/2+80&&M.y>430&&M.y<444);
   dt(vTxt,VW/2,435,9,vHover?'#888':'#444','center');
   if(vHover){X.strokeStyle='#555';X.lineWidth=1;X.strokeRect(VW/2-82,427,164,14)}
@@ -2046,7 +2046,7 @@ function drawTitle(){
     dt('Stick izq: Mover  Stick der: Apuntar  RT: Disparar',VW/2,520,7,'#666','center');
     dt('Y: Armas  X: Recargar  A: Recoger  Bx2: Salto',VW/2,532,7,'#666','center');
     dt('RB: Sprint  LB: Estratagema  D-Pad: ↑Granada →Granada',VW/2,544,7,'#666','center');
-    dt('Start: Pausa  Back: Musica',VW/2,556,7,'#666','center');
+    dt('Start: Pausa  Select: Musica',VW/2,556,7,'#666','center');
   }else if(isMobile){
     dt('Stick izq: Mover  Stick der: Apuntar  RT: Disparar',VW/2,520,7,'#666','center');
     dt('X/Y/A/B: Acciones  LT/LB/RB: Estratagema/Sprint',VW/2,532,7,'#666','center');
