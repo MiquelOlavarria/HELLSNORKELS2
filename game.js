@@ -222,7 +222,7 @@ const SDEF={
   eagle:{nm:'Aguila Cluster',sq:['up','right','down','down','right'],cl:'#ffaa00',cd:0,mc:720,target:1},
   jump:{nm:'Mochila Salto',sq:['down','up','up','down','up'],cl:'#00ff88',cd:0,mc:300,bp:1},
   cmd:{nm:'Lanz Cohetes',sq:['down','left','right','right','left'],cl:'#88ff00',cd:0,mc:480,target:1,pod:1},
-  sup:{nm:'Suministros',sq:['down','left','down','up','up','down'],cl:'#ffff00',cd:0,mc:360,target:1,pod:1},
+  sup:{nm:'Suministros',sq:['down','down','up','right'],cl:'#ffff00',cd:0,mc:360,target:1,pod:1},
 };
 const VL={
   shoot:["DEMOCRACIA!","FREEDOM!","Para la Super Tierra!","Toma!","Recibe libertad!","Muere bicho!"],
@@ -2033,7 +2033,7 @@ function drawTitle(){
     X.drawImage(imgPersonajes,VW/2-imgPersonajes.width/2,120,imgPersonajes.width,imgPersonajes.height);
   }
   // Version (clickable)
-  const vTxt='v1.9.121 — 2026.07.15';
+  const vTxt='v1.9.123 — 2026.07.15';
   const vHover=isMobile?(M.down&&inRect(M.x,M.y,VW/2-80,430,160,14)):(M.x>VW/2-80&&M.x<VW/2+80&&M.y>430&&M.y<444);
   dt(vTxt,VW/2,435,9,vHover?'#888':'#444','center');
   if(vHover){X.strokeStyle='#555';X.lineWidth=1;X.strokeRect(VW/2-82,427,164,14)}

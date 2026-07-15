@@ -93,7 +93,7 @@ input-mobile.js     → Táctil (Virtual GamePad)
 | Eagle Cluster | ↑→↓↓→ | Ataque aéreo con clúster |
 | Jump Pack | ↓↑↑↓ | Impulso vertical |
 | Lanz Cohetes | ↓←→→← | Lanzacohetes portátil |
-| Suministros | ↓←↓↑↓↑↓ | Munición + salud + granadas |
+| Suministros | ↓↓↑→ | Munición + salud + granadas |
 
 ---
 
