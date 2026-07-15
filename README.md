@@ -55,14 +55,14 @@ Se han mantenido los mismos controles que **HELLDIVERS 2** tanto en teclado como
 | Apuntar | Ratón | Right Stick |
 | Disparar | Click izquierdo | RT |
 | Granada | G | RT (con granada equipada) |
-| Melee | F | RB |
+| Melee | F | RB (tap) |
 | Recargar | R | X |
 | Interactuar | E | A |
-| Sprint | Shift | L3 |
+| Sprint | Shift | RB (hold) |
 | Usar stim | V | D-Pad ↑ |
 | Saltar (Jump Pack) | Espacio | A |
 | Cambiar arma | 1-4 | Y (tap: 1↔2, hold ≥1s: 3) / D-Pad → (4) |
-| Stratagem (abrir) | Tab / Ctrl | LB |
+| Stratagem (abrir) | Ctrl | LB |
 | Stratagem (flechas) | WASD | D-Pad |
 | Stratagem (confirmar) | Click / Enter | A |
 | Stratagem (cancelar) | Esc / Ctrl | LB / B |
