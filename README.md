@@ -99,7 +99,7 @@ input-mobile.js     → Táctil (Virtual GamePad)
 
 ## ¿Cómo se ha hecho esto?
 
-Este juego se ha desarrollado íntegramente con **[OpenCode](https://opencode.ai)**, el agente de código abierto para terminal, IDE y escritorio, utilizando únicamente los proveedores de inferencia incluidos en su opción **free**. Ni un solo prompt escrito a mano, ni un solo commit sin su ayuda. OpenCode es una herramienta brutal,开源, gratuita y con más de 160K estrellas en GitHub. Si programáis, os lo recomendamos encarecidamente. Gracias a todo el equipo de OpenCode por hacer esto posible.
+Este juego se ha desarrollado íntegramente con **[OpenCode](https://opencode.ai)**, el agente de código abierto para terminal, IDE y escritorio, utilizando únicamente los proveedores de inferencia incluidos en su opción **free**. Ni una sola línea de código escrita a mano, ni un solo commit sin su ayuda. OpenCode es una herramienta brutal, gratuita y con más de 160K estrellas en GitHub. Gracias a todo el equipo de OpenCode por hacer esto posible.
 
 ---
 
