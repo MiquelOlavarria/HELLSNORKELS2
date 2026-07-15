@@ -2033,28 +2033,31 @@ function drawTitle(){
     X.drawImage(imgPersonajes,VW/2-imgPersonajes.width/2,120,imgPersonajes.width,imgPersonajes.height);
   }
   // Version (clickable)
-  const vTxt='v1.9.96 — 2026.07.15';
+  const vTxt='v1.9.115 — 2026.07.15';
   const vHover=isMobile?(M.down&&inRect(M.x,M.y,VW/2-80,430,160,14)):(M.x>VW/2-80&&M.x<VW/2+80&&M.y>430&&M.y<444);
   dt(vTxt,VW/2,435,9,vHover?'#888':'#444','center');
   if(vHover){X.strokeStyle='#555';X.lineWidth=1;X.strokeRect(VW/2-82,427,164,14)}
-  dt(isController?'[ A ] Empezar':isMobile?'[ Toca para empezar ]':'[ ENTER o Click ]',VW/2,460,13,(fc/30|0)%2?'#ffcc00':'#886600','center');
-  dt('CONTROLES:',VW/2,490,9,'#888','center');
+  const cHover=isMobile?(M.down&&inRect(M.x,M.y,VW/2-60,448,120,14)):(M.x>VW/2-60&&M.x<VW/2+60&&M.y>448&&M.y<462);
+  dt('Créditos',VW/2,458,9,cHover?'#888':'#444','center');
+  if(cHover){X.strokeStyle='#555';X.lineWidth=1;X.strokeRect(VW/2-62,450,124,14)}
+  dt(isController?'[ A ] Empezar':isMobile?'[ Toca para empezar ]':'[ ENTER o Click ]',VW/2,480,13,(fc/30|0)%2?'#ffcc00':'#886600','center');
+  dt('CONTROLES:',VW/2,505,9,'#888','center');
   if(isController){
-    dt('Stick izq: Mover  Stick der: Apuntar  RT: Disparar',VW/2,505,7,'#666','center');
-    dt('Y: Armas  X: Recargar  A: Recoger  Bx2: Salto',VW/2,517,7,'#666','center');
-    dt('RB: Sprint  LB: Estratagema  D-Pad: ↑Granada →Granada',VW/2,529,7,'#666','center');
-    dt('Start: Pausa  Back: Musica',VW/2,541,7,'#666','center');
+    dt('Stick izq: Mover  Stick der: Apuntar  RT: Disparar',VW/2,520,7,'#666','center');
+    dt('Y: Armas  X: Recargar  A: Recoger  Bx2: Salto',VW/2,532,7,'#666','center');
+    dt('RB: Sprint  LB: Estratagema  D-Pad: ↑Granada →Granada',VW/2,544,7,'#666','center');
+    dt('Start: Pausa  Back: Musica',VW/2,556,7,'#666','center');
   }else if(isMobile){
-    dt('Stick izq: Mover  Stick der: Apuntar  RT: Disparar',VW/2,505,7,'#666','center');
-    dt('X/Y/A/B: Acciones  LT/LB/RB: Estratagema/Sprint',VW/2,517,7,'#666','center');
-    dt('D-Pad: Armas/Stim  A: Recoger/Confirmar',VW/2,529,7,'#666','center');
+    dt('Stick izq: Mover  Stick der: Apuntar  RT: Disparar',VW/2,520,7,'#666','center');
+    dt('X/Y/A/B: Acciones  LT/LB/RB: Estratagema/Sprint',VW/2,532,7,'#666','center');
+    dt('D-Pad: Armas/Stim  A: Recoger/Confirmar',VW/2,544,7,'#666','center');
   }else{
-    dt('[1-4] Armas  [G] Granada  [V] Stim  [SHIFT] Correr',VW/2,505,7,'#666','center');
-    dt('[R] Recargar  [E] Recoger  [CTRL]+WASD Estratagemas',VW/2,517,7,'#666','center');
-    dt('[WASD] Mover  [Mouse] Apuntar  [ESC] Pausa  [M] Musica',VW/2,529,7,'#666','center');
+    dt('[1-4] Armas  [G] Granada  [V] Stim  [SHIFT] Correr',VW/2,520,7,'#666','center');
+    dt('[R] Recargar  [E] Recoger  [CTRL]+WASD Estratagemas',VW/2,532,7,'#666','center');
+    dt('[WASD] Mover  [Mouse] Apuntar  [ESC] Pausa  [M] Musica',VW/2,544,7,'#666','center');
   }
-  dt('Parodia no oficial de HELLDIVERS 2. Sin ánimo de lucro.', VW/2, 565, 9, '#666', 'center');
-  dt('Todos los derechos de la obra original pertenecen a Arrowhead/Sony.', VW/2, 580, 9, '#666', 'center');
+  dt('Parodia no oficial de HELLDIVERS 2. Sin ánimo de lucro.', VW/2, 570, 9, '#666', 'center');
+  dt('Todos los derechos de la obra original pertenecen a Arrowhead/Sony.', VW/2, 585, 9, '#666', 'center');
   X.restore();
 }
 
@@ -2215,6 +2218,33 @@ function drawChangelog(){
   if(clScroll<maxScroll){dt('▼ Mas abajo',VW/2,VH-20,9,'#555','center')}
   // Nav
   dt(isController?'LB/RB pagina  A/Volver':'← → cambiar pagina  ESC volver',VW/2,VH-5,9,'#444','center');
+  X.restore();
+}
+
+function drawAbout(){
+  X.fillStyle='#000';X.fillRect(0,0,C.width,C.height);
+  X.save();X.translate(GOX,GOY);X.scale(SC,SC);
+  X.fillStyle='#0a0a14';X.fillRect(0,0,VW,VH);drawStars();
+  dt('HELLSNORKELS 2',VW/2,40,22,'#ffcc00','center');
+  dt('v1.9.96',VW/2,62,10,'#555','center');
+  let y=100;
+  dt('Parodia no oficial y sin animo de lucro de HELLDRIVERS 2.',VW/2,y,10,'#aaa','center');y+=20;
+  dt('Si has llegado aqui, seguramente ya conozcas el juego original.',VW/2,y,10,'#aaa','center');y+=20;
+  dt('Si no es asi, te lo recomendamos. Nosotros estamos enganchados.',VW/2,y,10,'#aaa','center');y+=35;
+  dt('─ DESARROLLO ─',VW/2,y,12,'#ffcc00','center');y+=22;
+  dt('Desarrollado integramente con OpenCode,',VW/2,y,10,'#aaa','center');y+=16;
+  dt('el agente de codigo abierto para terminal y IDE.',VW/2,y,10,'#aaa','center');y+=16;
+  dt('opencode.ai',VW/2,y,10,'#4488ff','center');y+=30;
+  dt('─ CODIGO FUENTE ─',VW/2,y,12,'#ffcc00','center');y+=22;
+  dt('github.com/MiquelOlavarria/HELLSNORKELS2',VW/2,y,10,'#4488ff','center');y+=16;
+  dt('Si encuentas algun bug, puedes abrir un issue.',VW/2,y,10,'#aaa','center');y+=30;
+  dt('─ EQUIPO ─',VW/2,y,12,'#ffcc00','center');y+=22;
+  dt('Miquel Olavarria — Codigo, diseno y test',VW/2,y,10,'#aaa','center');y+=16;
+  dt('OpenCode (big-pickle) — Asistente de desarrollo',VW/2,y,10,'#aaa','center');y+=30;
+  dt('─ DERECHOS ─',VW/2,y,12,'#ffcc00','center');y+=22;
+  dt('HELLDIVERS 2 es marca de Arrowhead / Sony.',VW/2,y,9,'#666','center');y+=14;
+  dt('Este juego no tiene animo de lucro y no pretende reemplazar la obra original.',VW/2,y,9,'#666','center');y+=30;
+  dt(isController?'[ A ] Volver':'[ ESC o Click ] Volver',VW/2,VH-15,10,'#444','center');
   X.restore();
 }
 
@@ -2713,7 +2743,7 @@ function loop(){
 
   // Debug menu toggle: Ctrl+Shift+H
   if((K.ControlLeft||K.ControlRight)&&(K.ShiftLeft||K.ShiftRight)&&K.KeyH){
-    if(!debugMenu&&gs!=='title'&&gs!=='changelog'&&gs!=='diff'&&gs!=='planet'){debugMenu=true;debugSel=0}
+    if(!debugMenu&&gs!=='title'&&gs!=='changelog'&&gs!=='about'&&gs!=='diff'&&gs!=='planet'){debugMenu=true;debugSel=0}
     else if(debugMenu)debugMenu=false;
     K.KeyH=false;
   }
@@ -2732,6 +2762,8 @@ function loop(){
     if(ac&&!mOn&&!musicMuted)playMusic(.6);
     // Version click → changelog
     if(M.click&&inRect(M.x,M.y,VW/2-80,233,160,14)){gs='changelog';clScroll=0;clPage=CLG.length-1;M.click=false;SFX.mc()}
+    // Credits click → about
+    else if(M.click&&inRect(M.x,M.y,VW/2-60,448,120,14)){gs='about';M.click=false;SFX.mc()}
     else if(JP.Enter||JP.NumpadEnter||(M.click&&fc>10)||(isController&&gpJust(0)&&fc>10)){ea();gs='diff';menuS=-1;SFX.mc();M.down=false;M.click=false}
     if(JP.KeyM||isController&&gpJust(8)){musicMuted=!musicMuted;if(musicMuted)stopMusic();else playMusic(.6)}
     cj();gpEndFrame();M.click=false;return;
@@ -2742,7 +2774,12 @@ function loop(){
     if(JP.ArrowLeft||JP.KeyA||(isController&&gpJust(14))){clPage=Math.max(0,clPage-1);clScroll=0;SFX.ms()}
     if(JP.ArrowRight||JP.KeyD||(isController&&gpJust(15))){clPage=Math.min(CLG.length-1,clPage+1);clScroll=0;SFX.ms()}
     if(JP.ArrowUp||JP.KeyW||(isController&&gpJust(12)))clScroll=Math.max(0,clScroll-20);
-    if(JP.ArrowDown||JP.KeyS||(isController&&gpJust(13))){const maxS=Math.max(0,(CLG[clPage].c.length*16)-(VH-140));clScroll=Math.min(maxS,clScroll+20)}
+    if(JP.ArrowDown||JP.KeyS||(isController&&gpJust(13))){const maxS=Math.max(0,(ch.c.length*16)-(VH-140));clScroll=Math.min(maxS,clScroll+20)}
+    cj();gpEndFrame();M.click=false;return;
+  }
+  if(gs==='about'){
+    drawAbout();
+    if(JP.Escape||M.click||(isController&&gpJust(0))){gs='title';SFX.ms();M.click=false}
     cj();gpEndFrame();M.click=false;return;
   }
   if(gs==='diff'){

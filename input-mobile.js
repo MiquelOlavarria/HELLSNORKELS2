@@ -65,7 +65,7 @@ function onTouchStart(e){
     // Portrait: only allow menu touches on game area
     for(const t of e.changedTouches){
       const v=tToV(t.clientX,t.clientY);
-      if(v.x>=0&&v.x<VW&&v.y>=0&&v.y<VH&&(gs==='title'||gs==='changelog'||gs==='diff'||gs==='planet'||gs==='paused'||gs==='gameover'||gs==='victory')){
+      if(v.x>=0&&v.x<VW&&v.y>=0&&v.y<VH&&(gs==='title'||gs==='changelog'||gs==='about'||gs==='diff'||gs==='planet'||gs==='paused'||gs==='gameover'||gs==='victory')){
         M.x=v.x;M.y=v.y;M.click=true;M.down=true;
       }
     }
@@ -77,7 +77,7 @@ function onTouchStart(e){
     if(v.x>=0&&v.x<CTRL_W)hitLandscapeLeft(t.identifier,v.x,v.y);
     else if(v.x>=CTRL_W+VW)hitLandscapeRight(t.identifier,v.x-CTRL_W-VW,v.y);
     // Menu touch: tapping game area acts as mouse click
-    if(v.x>=CTRL_W&&v.x<CTRL_W+VW&&v.y>=0&&v.y<VH&&(gs==='title'||gs==='changelog'||gs==='diff'||gs==='planet'||gs==='paused'||gs==='gameover'||gs==='victory')){
+    if(v.x>=CTRL_W&&v.x<CTRL_W+VW&&v.y>=0&&v.y<VH&&(gs==='title'||gs==='changelog'||gs==='about'||gs==='diff'||gs==='planet'||gs==='paused'||gs==='gameover'||gs==='victory')){
       M.x=v.x-CTRL_W;M.y=v.y;M.click=true;M.down=true;
     }
   }
