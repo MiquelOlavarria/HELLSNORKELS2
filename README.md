@@ -21,6 +21,10 @@
 
 ---
 
+> Si has llegado hasta aquí, seguramente ya conozcas **HELLDIVERS 2**. Si no es así, te lo recomendamos: es increíble. Nosotros estamos enganchados. Y mucho. Y cada vez que pensamos que ya hemos salido del bucle, nos ponemos "una partidita más" y volvemos a caer.
+
+---
+
 ## Contenido
 
 | | |
@@ -81,6 +85,18 @@ input-mobile.js     → Táctil (Virtual GamePad)
 | Jump Pack | ↓↑↑↓ | Impulso vertical |
 | Lanz Cohetes | ↓←→→← | Lanzacohetes portátil |
 | Suministros | ↓←↓↑↓↑↓ | Munición + salud + granadas |
+
+---
+
+## ¿Cómo se ha hecho esto?
+
+Este juego se ha desarrollado íntegramente con **[OpenCode](https://opencode.ai)**, el agente de código abierto para terminal, IDE y escritorio, utilizando únicamente los proveedores de inferencia incluidos en su opción **free**. Ni un solo prompt escrito a mano, ni un solo commit sin su ayuda. OpenCode es una herramienta brutal,开源, gratuita y con más de 160K estrellas en GitHub. Si programáis, os lo recomendamos encarecidamente. Gracias a todo el equipo de OpenCode por hacer esto posible.
+
+---
+
+## Estado de desarrollo
+
+**HELLSNORKELS 2** está en desarrollo activo. Poco a poco vamos terminando cosas, mejorando otras y corrigiendo bugs. Si encontráis algo raro (más raro de lo esperado), no dudéis en abrir un issue.
 
 ---
 
