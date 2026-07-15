@@ -88,7 +88,7 @@ input-mobile.js     → Táctil (Virtual GamePad)
 
 | Nombre | Secuencia | Efecto |
 |--------|-----------|--------|
-| Guard Dog | ↓↑↓↑↑↓ | Drone de combate autónomo |
+| Guard Dog | ↓↑↑→↓↓ | Drone de combate autónomo |
 | Orbital Laser | →↓↑→↓ | Láser orbital (10s) |
 | Eagle Cluster | ↑→↓↓→ | Ataque aéreo con clúster |
 | Jump Pack | ↓↑↑↓ | Impulso vertical |
