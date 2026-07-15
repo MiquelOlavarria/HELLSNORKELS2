@@ -10,7 +10,7 @@
 </p>
 
 <p align="center">
-  <a href="https://web.intra.sqmnet.es"><img src="https://img.shields.io/badge/%F0%9F%8E%AE-PLAY%20NOW-brightgreen?style=for-the-badge" alt="Play now"></a>
+  <a href="http://HellSnorkels2.olavarria.es"><img src="https://img.shields.io/badge/%F0%9F%8E%AE-PLAY%20NOW-brightgreen?style=for-the-badge" alt="Play now"></a>
 </p>
 
 ---
